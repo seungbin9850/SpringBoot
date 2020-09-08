@@ -33,10 +33,10 @@ public class BoardListDTO {
         Specification<Board> title = null;
         Specification<Board> content = null;
         if (this.title != null && !this.title.isEmpty()) {
-            title = Specification.where((root, query, builder) -> builder.like(root.<String> get("title"), "%" + this.title + "%"));
+            title = Specification.where((root, query, builder) -> builder.like(root.<String>get("title"), "%" + this.title + "%"));
         }
         if (this.content != null && !this.content.isEmpty()) {
-            content = Specification.where((root, query, builder) -> builder.like(root.<String> get("content"), "%" + this.content + "%"));
+            content = Specification.where((root, query, builder) -> builder.like(root.<String>get("content"), "%" + this.content + "%"));
         }
         return Specification.where(title).and(content);
     }

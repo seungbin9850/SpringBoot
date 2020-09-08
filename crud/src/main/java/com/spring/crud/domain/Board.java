@@ -1,7 +1,9 @@
 package com.spring.crud.domain;
 
 import lombok.*;
+
 import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @ToString
-@Table(name = "board")
+@Table
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

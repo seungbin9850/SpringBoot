@@ -41,7 +41,7 @@ public class AuthServiceImpl implements AuthService {
     public TokenResponse responseToken(String email) {
         return TokenResponse.builder()
                 .accessToken(jwtTokenProvider.generateAccessToken(email))
-                .refreshToken(jwtTokenProvider. generateRefreshToken(email))
+                .refreshToken(jwtTokenProvider.generateRefreshToken(email))
                 .tokenType(prefix)
                 .build();
     }

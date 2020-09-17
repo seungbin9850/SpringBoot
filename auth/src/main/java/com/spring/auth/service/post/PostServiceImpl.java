@@ -7,6 +7,8 @@ import com.spring.auth.security.AuthenticationFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PostServiceImpl implements PostService {
@@ -26,5 +28,15 @@ public class PostServiceImpl implements PostService {
                 .email(email)
                 .build()
         );
+    }
+
+    @Override
+    public void delete(Long id) {
+        postRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Post> showAll() {
+        return postRepository.findAll();
     }
 }

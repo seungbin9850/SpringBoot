@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,5 +39,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> showAll() {
         return postRepository.findAll();
+    }
+
+    @Override
+    public Optional<Post> showOne(Long id) {
+        return postRepository.findById(id);
     }
 }

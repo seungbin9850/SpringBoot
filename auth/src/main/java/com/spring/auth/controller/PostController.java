@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/post")
@@ -23,6 +24,10 @@ public class PostController {
     @GetMapping
     public List<Post> show() {
         return postService.showAll();
+    }
+
+    public Optional<Post> showOne(Long id) {
+        return postService.showOne(id);
     }
 
     @DeleteMapping("/{id}")

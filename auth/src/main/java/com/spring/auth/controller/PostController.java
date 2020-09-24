@@ -26,7 +26,8 @@ public class PostController {
         return postService.showAll();
     }
 
-    public Optional<Post> showOne(Long id) {
+    @GetMapping("/{id}")
+    public Optional<Post> showOne(@PathVariable Long id) {
         return postService.showOne(id);
     }
 
